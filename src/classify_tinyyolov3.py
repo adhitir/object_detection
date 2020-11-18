@@ -187,7 +187,7 @@ def draw_boxes(np_image, v_boxes, v_labels, v_scores):
 
 def callback(image_msg):
     #First convert the image to OpenCV image 
-    cv_image = bridge.imgmsg_to_cv2(image_msg, desired_encoding="passthrough")
+    cv_image = bridge.imgmsg_to_cv2(image_msg, desired_encoding="bgr8")
     height, width, channels = cv_image.shape
     #print(cv_image.shape)
     cv_image_target = cv2.resize(cv_image, target_size) 
@@ -243,7 +243,7 @@ def callback(image_msg):
 
           pred_image = draw_boxes(cv_image,v_boxes,v_labels,v_scores)
 
-          image_pub.publish(bridge.cv2_to_imgmsg(pred_image,"passthrough"))
+          image_pub.publish(bridge.cv2_to_imgmsg(pred_image,"bgr8"))
 
         except ValueError:
           print("Prediction below threshold")

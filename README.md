@@ -1,4 +1,6 @@
-### Object Recognition Using YOLOv3/TinyYOLOv3 in Keras with a ROS Wrapper
+### Object Detection Using YOLOv3/TinyYOLOv3 in Keras with a ROS Wrapper
+
+![](./image/object_det.gif)
 
 This package contains 3 scripts with the following publishers and subscribers:
 
